@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EpoxyGarageFloors.ai — Get an Instant Price Range From a Certified Installer</title>
+<meta name="description" content="Tell us about your garage and get an instant price range, then get matched with a certified epoxy garage floor installer near you. Free for homeowners, nationwide coverage.">
+<link rel="icon" href="/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="brand"><img src="/images/logo.png" alt="EpoxyGarageFloors.ai"></a>
+    <nav class="nav-links">
+      <a href="#how-it-works">How It Works</a>
+      <a href="#gallery">Recent Projects</a>
+      <a href="/contractors/">For Contractors</a>
+      <a href="/dashboard/">Pro Login</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#quote" class="btn btn-outline">Get My Free Quote</a>
+      <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="quote">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Nationwide Certified Installer Network</span>
+      <h1>Get Your <span class="script">Instant</span> Epoxy Garage Floor Price Range</h1>
+      <p class="lede">Answer a few quick questions and see your estimated price range right now — then get matched with a certified, insured epoxy installer near you. 100% free, no obligation.</p>
+      <div class="trust-row">
+        <span><span class="dot"></span>Free for homeowners</span>
+        <span><span class="dot"></span>Licensed &amp; insured pros only</span>
+        <span><span class="dot"></span>Available in all 50 states</span>
+        <span><span class="dot"></span>No spam, one pro matched to you</span>
+      </div>
+    </div>
+
+    <form id="quote-form" class="quote-card" novalidate>
+      <div class="quote-card-head">
+        <h3>Get My Free Price Range</h3>
+        <span class="step-count">Step 1 of 6</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill"></div></div>
+      <p class="q-error"></p>
+
+      <div class="q-step" data-step="location">
+        <label class="field-label">Where's the project?</label>
+        <div class="field-row">
+          <div class="field"><input type="text" id="zip" placeholder="ZIP code" inputmode="numeric" maxlength="5"></div>
+          <div class="field"><input type="text" id="city" placeholder="City (optional)"></div>
+        </div>
+        <div class="field"><select id="state" class="state-select"><option value="">State</option></select></div>
+        <div class="q-nav"><button type="button" class="btn btn-primary btn-block" data-next>Continue</button></div>
+      </div>
+
+      <div class="q-step" data-step="size">
+        <label class="field-label">How big is your garage?</label>
+        <div class="option-grid">
+          <div class="option-card" data-group="garageSize" data-value="1car">1-Car<span class="sub">~240 sq ft</span></div>
+          <div class="option-card" data-group="garageSize" data-value="2car">2-Car<span class="sub">~440 sq ft</span></div>
+          <div class="option-card" data-group="garageSize" data-value="3car">3-Car<span class="sub">~640 sq ft</span></div>
+          <div class="option-card" data-group="garageSize" data-value="4car">4+ Car<span class="sub">~860 sq ft</span></div>
+        </div>
+        <div class="q-nav">
+          <button type="button" class="btn btn-outline" data-back>Back</button>
+          <button type="button" class="btn btn-primary" data-next>Continue</button>
+        </div>
+      </div>
+
+      <div class="q-step" data-step="condition">
+        <label class="field-label">What's the current floor condition?</label>
+        <div class="option-grid single">
+          <div class="option-card" data-group="floorCondition" data-value="good">Good shape<span class="sub">Smooth, no major damage</span></div>
+          <div class="option-card" data-group="floorCondition" data-value="minor">Minor cracks or stains<span class="sub">Some prep work needed</span></div>
+          <div class="option-card" data-group="floorCondition" data-value="major">Major cracks, oil stains, or damage<span class="sub">Extra prep required</span></div>
+        </div>
+        <div class="q-nav">
+          <button type="button" class="btn btn-outline" data-back>Back</button>
+          <button type="button" class="btn btn-primary" data-next>Continue</button>
+        </div>
+      </div>
+
+      <div class="q-step" data-step="coating">
+        <label class="field-label">What style are you interested in?</label>
+        <div class="option-grid">
+          <div class="option-card" data-group="coatingInterest" data-value="solid">Solid Color<span class="sub">Classic, budget-friendly</span></div>
+          <div class="option-card" data-group="coatingInterest" data-value="flake">Flake / Chip<span class="sub">Textured, hides dirt</span></div>
+          <div class="option-card" data-group="coatingInterest" data-value="metallic">Metallic<span class="sub">Premium, 3D look</span></div>
+          <div class="option-card" data-group="coatingInterest" data-value="notsure">Not Sure Yet<span class="sub">Get pro's recommendation</span></div>
+        </div>
+        <div class="q-nav">
+          <button type="button" class="btn btn-outline" data-back>Back</button>
+          <button type="button" class="btn btn-primary" data-next>Continue</button>
+        </div>
+      </div>
+
+      <div class="q-step" data-step="timeline">
+        <label class="field-label">When do you want this done?</label>
+        <div class="option-grid single">
+          <div class="option-card" data-group="timeline" data-value="asap">As soon as possible</div>
+          <div class="option-card" data-group="timeline" data-value="1-3mo">In the next 1-3 months</div>
+          <div class="option-card" data-group="timeline" data-value="3-6mo">In the next 3-6 months</div>
+          <div class="option-card" data-group="timeline" data-value="researching">Just researching for now</div>
+        </div>
+        <div class="q-nav">
+          <button type="button" class="btn btn-outline" data-back>Back</button>
+          <button type="button" class="btn btn-primary" data-next>See My Price Range</button>
+        </div>
+      </div>
+
+      <div class="q-step" data-step="reveal">
+        <div class="price-reveal">
+          <span class="eyebrow">Your Estimated Price Range</span>
+          <div class="amount" id="price-amount">$0 – $0</div>
+          <p class="disclaimer">Ballpark estimate based on your answers. Your matched installer confirms the exact price after seeing your garage.</p>
+        </div>
+        <div class="q-nav">
+          <button type="button" class="btn btn-outline" data-back>Back</button>
+          <button type="button" class="btn btn-primary" data-next>Get Matched With a Pro</button>
+        </div>
+      </div>
+
+      <div class="q-step" data-step="contact">
+        <label class="field-label">Last step — where should your pro reach you?</label>
+        <div class="field"><input type="text" id="fullName" placeholder="Full name"></div>
+        <div class="field"><input type="email" id="email" placeholder="Email address"></div>
+        <div class="field"><input type="tel" id="phone" placeholder="Phone number"></div>
+        <div class="q-nav">
+          <button type="button" class="btn btn-outline" data-back>Back</button>
+          <button type="submit" class="btn btn-primary" data-submit>Get Matched With a Certified Pro</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="section" id="how-it-works">
+  <div class="wrap center">
+    <span class="eyebrow">How It Works</span>
+    <h2>Three Steps To A Finished Garage</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Tell Us About Your Garage</h3>
+        <p>Answer a few quick questions about size, condition, and style. Takes about a minute.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>Get An Instant Price Range</h3>
+        <p>See a real ballpark estimate immediately — no waiting around for callbacks.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Get Matched With A Certified Pro</h3>
+        <p>We connect you with a licensed, insured installer in our network who'll confirm your final quote.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap center">
+    <span class="eyebrow">Why Homeowners Use Our Network</span>
+    <h2>Certified Installers. Zero Guesswork.</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="icon">🛡️</div>
+        <h4>Licensed &amp; Insured</h4>
+        <p>Every installer in our network carries liability insurance and is vetted before going live.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🇺🇸</div>
+        <h4>Nationwide Coverage</h4>
+        <p>Get matched with certified pros anywhere in the US, from small towns to major metros.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">💵</div>
+        <h4>100% Free, No Obligation</h4>
+        <p>Your price range and pro match are free. You only pay the installer if you move forward.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">⚡</div>
+        <h4>Fast Response</h4>
+        <p>Your matched installer is notified the moment you submit — most homeowners hear back within hours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="wrap center">
+    <span class="eyebrow">Recent Projects</span>
+    <h2>Real Floors From Our Network</h2>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap">
+    <div class="pro-cta">
+      <div>
+        <h3>Are You An Epoxy Or Concrete Coating Contractor?</h3>
+        <p>Join our nationwide network free and start receiving homeowner leads in your market. Want top placement and priority leads? Go Premium — limited to 1-3 installers per market.</p>
+      </div>
+      <a href="/contractors/" class="btn btn-primary btn-lg">Join The Network Free</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand"><img src="/images/logo.png" alt="EpoxyGarageFloors.ai"></a>
+        <p class="muted" style="margin-top:14px; font-size:13.5px; max-width:38ch;">The nationwide network connecting homeowners with certified epoxy garage floor and concrete coating installers.</p>
+      </div>
+      <div>
+        <h5>Homeowners</h5>
+        <a href="#quote">Get A Free Quote</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#gallery">Recent Projects</a>
+      </div>
+      <div>
+        <h5>Contractors</h5>
+        <a href="/contractors/">Join The Network</a>
+        <a href="/dashboard/">Pro Login</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="mailto:hello@epoxygaragefloors.ai">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> EpoxyGarageFloors.ai — All rights reserved.</span>
+      <span>Nationwide epoxy garage floor installer network</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="/js/main.js"></script>
+<script src="/js/gallery-data.js"></script>
+<script src="/js/pricing.js"></script>
+<script src="/js/quote.js"></script>
+<script>
+  const galleryGrid = document.getElementById("gallery-grid");
+  if (galleryGrid && window.EGF_GALLERY) {
+    galleryGrid.innerHTML = window.EGF_GALLERY.map(
+      (item) => `<img src="${item.src}" alt="${item.alt}" loading="lazy">`
+    ).join("");
+  }
+</script>
+</body>
+</html>

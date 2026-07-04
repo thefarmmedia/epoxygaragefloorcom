@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join The Network Free — EpoxyGarageFloors.ai For Contractors</title>
+<meta name="description" content="Join the EpoxyGarageFloors.ai installer network for free and start receiving homeowner leads nationwide. Upgrade to Premium for top placement in your market.">
+<link rel="icon" href="/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="brand"><img src="/images/logo.png" alt="EpoxyGarageFloors.ai"></a>
+    <nav class="nav-links">
+      <a href="/">Homeowners</a>
+      <a href="#tiers">Free vs Premium</a>
+      <a href="#signup">Join Now</a>
+      <a href="/dashboard/">Pro Login</a>
+    </nav>
+    <div class="header-cta">
+      <a href="#signup" class="btn btn-outline">Join Free</a>
+      <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap center" style="max-width: 760px;">
+    <span class="eyebrow">For Epoxy &amp; Concrete Coating Contractors</span>
+    <h1>Get Free Homeowner Leads. <span class="script">Nationwide.</span></h1>
+    <p class="lede" style="margin: 0 auto 28px;">Join the network for free and start receiving qualified homeowner leads in your area. Want first pick of every lead in your market? Go Premium — we only sell 1-3 Premium spots per market.</p>
+    <a href="#signup" class="btn btn-primary btn-lg">Join The Network Free</a>
+  </div>
+</section>
+
+<section class="section" id="tiers">
+  <div class="wrap center">
+    <span class="eyebrow">Two Ways To Grow</span>
+    <h2>Free Network vs Premium Installer</h2>
+    <div class="tier-grid">
+      <div class="tier-card">
+        <h3>Free Network Member</h3>
+        <p class="price">$0</p>
+        <ul>
+          <li>Listed in our nationwide certified installer network</li>
+          <li>Receive leads in your service area when no Premium pro is available</li>
+          <li>Public profile with your company info</li>
+          <li>No cost, no contract, cancel anytime</li>
+        </ul>
+        <a href="#signup" class="btn btn-outline btn-block">Join Free</a>
+      </div>
+      <div class="tier-card premium">
+        <span class="badge-pill">Most Leads</span>
+        <h3>Premium Installer</h3>
+        <p class="price">Priced By Market</p>
+        <ul>
+          <li>Top placement — shown first to every homeowner in your market</li>
+          <li>Priority routing on every matched lead in your area</li>
+          <li>Limited to 1-3 Premium spots per market (by market size)</li>
+          <li>Cancel anytime</li>
+        </ul>
+        <a href="/dashboard/" class="btn btn-primary btn-block">Log In To Upgrade</a>
+      </div>
+    </div>
+    <p class="muted" style="margin-top: 24px; font-size: 13px;">Join free first — you can upgrade to Premium from your contractor dashboard once your application is approved.</p>
+  </div>
+</section>
+
+<section class="section section-alt" id="signup">
+  <div class="wrap">
+    <div class="center" style="margin-bottom: 8px;">
+      <span class="eyebrow">Apply Free — Takes 2 Minutes</span>
+      <h2>Join The Network</h2>
+    </div>
+    <form id="signup-form" class="form-card" novalidate>
+      <div class="form-grid">
+        <div class="field full"><label class="field-label">Company Name</label><input type="text" id="companyName"></div>
+        <div class="field"><label class="field-label">Contact Name</label><input type="text" id="contactName"></div>
+        <div class="field"><label class="field-label">Phone</label><input type="tel" id="phone"></div>
+        <div class="field full"><label class="field-label">Email</label><input type="email" id="email"></div>
+        <div class="field"><label class="field-label">City (Home Base)</label><input type="text" id="city"></div>
+        <div class="field"><label class="field-label">State</label><select id="state" class="state-select"><option value="">Select state</option></select></div>
+        <div class="field"><label class="field-label">Service Radius (miles)</label><input type="text" id="serviceRadiusMiles" placeholder="e.g. 50" inputmode="numeric"></div>
+        <div class="field"><label class="field-label">Years In Business</label><input type="text" id="yearsInBusiness" inputmode="numeric"></div>
+        <div class="field full"><label class="field-label">License # (optional)</label><input type="text" id="licenseNumber"></div>
+        <div class="field full"><label class="field-label">Website (optional)</label><input type="text" id="website" placeholder="https://"></div>
+      </div>
+      <div class="checkbox-row" style="margin: 6px 0 22px;">
+        <input type="checkbox" id="insured">
+        <label for="insured">I confirm my business carries general liability insurance.</label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" data-submit>Submit Application</button>
+      <p class="q-error"></p>
+      <div class="status-msg" id="status-msg"></div>
+    </form>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> EpoxyGarageFloors.ai — All rights reserved.</span>
+      <span>Nationwide epoxy garage floor installer network</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="/js/main.js"></script>
+<script src="/js/contractor-signup.js"></script>
+</body>
+</html>
