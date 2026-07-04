@@ -15,6 +15,12 @@
   --green: #3ecf6e;
   --red: #f0554c;
 
+  /* light-section counterparts, used inside .section-alt */
+  --ink: #0a0a0a;
+  --ink-muted: #62666d;
+  --light-panel: #f5f5f5;
+  --light-border: #e2e2e2;
+
   --font-display: "Anton", sans-serif;
   --font-script: "Lobster", cursive;
   --font-body: "Poppins", sans-serif;
@@ -55,7 +61,70 @@ p { margin: 0 0 16px; color: var(--off-white); }
 
 .section { padding: 72px 0; }
 .section-tight { padding: 48px 0; }
-.section-alt { background: var(--near-black); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+/* True white section — pairs with the black .section above/below it so pages
+   alternate black/white/black, matching the rest of the EpoxyGarageFloors.ai family. */
+.section-alt {
+  background: var(--white);
+  color: var(--ink);
+  border-top: 1px solid var(--light-border);
+  border-bottom: 1px solid var(--light-border);
+}
+.section-alt h1, .section-alt h2, .section-alt h3, .section-alt h4 { color: var(--ink); }
+.section-alt p { color: var(--ink-muted); }
+.section-alt .muted { color: var(--ink-muted); }
+.section-alt .eyebrow { color: var(--amber-dark); }
+
+.section-alt .btn-outline { border-color: var(--ink); color: var(--ink); }
+.section-alt .btn-outline:hover { background: var(--ink); color: var(--white); }
+
+.section-alt .feature-card,
+.section-alt .tier-card,
+.section-alt .form-card,
+.section-alt .step-card .step-num,
+.section-alt .quote-card {
+  background: var(--light-panel);
+  border-color: var(--light-border);
+}
+.section-alt .feature-card h4, .section-alt .tier-card h3 { color: var(--ink); }
+.section-alt .feature-card p, .section-alt .tier-card p, .section-alt .tier-card li { color: var(--ink-muted); }
+.section-alt .tier-card ul { color: var(--ink-muted); }
+.section-alt .tier-card.premium { border-color: var(--amber); box-shadow: 0 0 0 1px var(--amber) inset; }
+.section-alt .badge-inline { background: #ececec; border-color: var(--light-border); color: var(--ink-muted); }
+
+.section-alt .field input[type="text"],
+.section-alt .field input[type="email"],
+.section-alt .field input[type="tel"],
+.section-alt .field select {
+  background: var(--white);
+  border-color: #d5d5d5;
+  color: var(--ink);
+}
+.section-alt .checkbox-row { color: var(--ink-muted); }
+.section-alt .pro-cta { background: linear-gradient(135deg, var(--light-panel), #ececec); border-color: var(--light-border); }
+
+/* Small rounded status pill with a dot — "NOW ACCEPTING EARLY ACCESS" style badge */
+.pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--charcoal);
+  color: var(--off-white);
+  margin-bottom: 22px;
+}
+.pill-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber); }
+.section-alt .pill-badge { background: var(--light-panel); border-color: var(--light-border); color: var(--ink); }
+
+/* Full-bleed accent band used as a divider between a section head and its content */
+.divider-bar { height: 6px; background: var(--amber); margin: 36px 0; border-radius: 3px; }
+.section-alt .disclaimer { color: var(--ink-muted); }
 
 .eyebrow {
   display: inline-block;
