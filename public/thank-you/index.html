@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're Matched! — EpoxyGarageFloors.ai</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="brand"><img src="/images/logo.png" alt="EpoxyGarageFloors.ai"></a>
+    <nav class="nav-links">
+      <a href="/#how-it-works">How It Works</a>
+      <a href="/#gallery">Recent Projects</a>
+      <a href="/contractors/">For Contractors</a>
+    </nav>
+    <div class="header-cta">
+      <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap center" style="max-width: 640px;">
+    <span class="eyebrow">Request Received</span>
+    <h1 id="headline">You're All Set!</h1>
+    <div class="quote-card" style="margin-top: 24px;">
+      <div class="price-reveal">
+        <span class="eyebrow">Your Estimated Price Range</span>
+        <div class="amount" id="price-amount">$0 – $0</div>
+      </div>
+      <div id="matched-block"></div>
+      <p class="disclaimer">This is a ballpark estimate — your certified installer confirms the exact price after seeing your garage.</p>
+      <a href="/" class="btn btn-outline btn-block" style="margin-top: 10px;">Back To Home</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap center">
+    <span class="eyebrow">While You Wait</span>
+    <h2>What Happens Next</h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3>Pro Gets Notified</h3>
+        <p>Your matched installer receives your project details right away.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3>They Reach Out</h3>
+        <p>Expect a call, text, or email within a few hours to confirm details.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3>Get Your Final Quote</h3>
+        <p>They'll confirm an exact price after seeing photos or visiting in person.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> EpoxyGarageFloors.ai — All rights reserved.</span>
+      <span>Nationwide epoxy garage floor installer network</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="/js/main.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const low = Number(params.get("low") || 0);
+  const high = Number(params.get("high") || 0);
+  const name = params.get("name") || "";
+  const company = params.get("company");
+  const city = params.get("city");
+  const state = params.get("state");
+
+  if (name) document.getElementById("headline").textContent = `You're All Set, ${name}!`;
+  document.getElementById("price-amount").textContent =
+    `$${low.toLocaleString("en-US")} – $${high.toLocaleString("en-US")}`;
+
+  const matchedBlock = document.getElementById("matched-block");
+  matchedBlock.textContent = "";
+  if (company) {
+    const intro = document.createElement("p");
+    intro.style.marginTop = "18px";
+    intro.textContent = "You've been matched with";
+
+    const companyEl = document.createElement("p");
+    companyEl.style.cssText = "font-family: var(--font-display); font-size: 22px; text-transform: uppercase; color: var(--white); margin-bottom: 4px;";
+    companyEl.textContent = company;
+
+    const locationEl = document.createElement("p");
+    locationEl.className = "muted";
+    locationEl.style.marginTop = "0";
+    locationEl.textContent = [city, state].filter(Boolean).join(", ");
+
+    matchedBlock.append(intro, companyEl, locationEl);
+  } else {
+    const fallback = document.createElement("p");
+    fallback.style.marginTop = "18px";
+    fallback.textContent = "We're lining up a certified installer in your area and will follow up shortly.";
+    matchedBlock.append(fallback);
+  }
+</script>
+</body>
+</html>

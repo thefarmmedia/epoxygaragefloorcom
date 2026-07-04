@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contractor Dashboard — EpoxyGarageFloors.ai</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Lobster&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .lead-table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  .lead-table th, .lead-table td { text-align: left; padding: 12px 10px; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+  .lead-table th { color: var(--muted); text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; }
+  .lead-table tr:last-child td { border-bottom: none; }
+  .table-wrap { overflow-x: auto; background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 6px 20px; }
+  .dash-head { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; margin-bottom: 28px; }
+  .tier-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; padding: 5px 12px; border-radius: 999px; }
+  .tier-tag.premium { background: var(--amber); color: var(--black); }
+  .tier-tag.free { background: var(--charcoal); border: 1px solid var(--border); color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="brand"><img src="/images/logo.png" alt="EpoxyGarageFloors.ai"></a>
+    <nav class="nav-links">
+      <a href="/">Homeowners</a>
+      <a href="/contractors/">For Contractors</a>
+    </nav>
+    <div class="header-cta">
+      <button class="btn btn-outline hidden" id="logout-btn">Log Out</button>
+      <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<section class="section" style="min-height: 70vh;">
+  <div class="wrap">
+
+    <div id="login-view">
+      <div class="form-card center">
+        <h2>Pro Login</h2>
+        <p class="muted">Enter the email you signed up with — we'll send you a one-time login link.</p>
+        <form id="login-form">
+          <div class="field"><input type="email" id="login-email" placeholder="you@company.com" required></div>
+          <button type="submit" class="btn btn-primary btn-block" data-submit>Send Login Link</button>
+        </form>
+        <div class="status-msg" id="login-status"></div>
+      </div>
+    </div>
+
+    <div id="dashboard-view" class="hidden">
+      <div class="dash-head">
+        <div>
+          <span class="eyebrow">Contractor Dashboard</span>
+          <h2 id="company-name" style="margin-bottom: 4px;">—</h2>
+          <span class="tier-tag" id="tier-tag">—</span>
+        </div>
+        <button class="btn btn-primary" id="upgrade-btn">Upgrade To Premium</button>
+      </div>
+      <p class="status-msg" id="dash-status"></p>
+
+      <div class="table-wrap">
+        <table class="lead-table">
+          <thead>
+            <tr>
+              <th>Date</th><th>Name</th><th>Contact</th><th>Location</th>
+              <th>Size</th><th>Est. Range</th><th>Timeline</th>
+            </tr>
+          </thead>
+          <tbody id="leads-body">
+            <tr><td colspan="7" class="muted">Loading leads…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> EpoxyGarageFloors.ai — All rights reserved.</span>
+      <span>Nationwide epoxy garage floor installer network</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<script src="/js/main.js"></script>
+<script type="module" src="/js/dashboard.js"></script>
+</body>
+</html>
