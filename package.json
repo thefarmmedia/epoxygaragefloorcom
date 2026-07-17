@@ -4,7 +4,8 @@
   "private": true,
   "description": "EpoxyGarageFloors.ai homeowner lead-gen marketplace, matching homeowners with certified epoxy garage floor installers nationwide.",
   "scripts": {
-    "dev": "netlify dev"
+    "dev": "netlify dev",
+    "generate:locations": "node scripts/generate-location-pages.js"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.4",

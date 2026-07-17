@@ -16,6 +16,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let current = 0;
 
+  // Cost-guide landing pages (e.g. /epoxy-garage-floor-cost/texas/) link here
+  // with ?state=XX so the location step arrives pre-filled.
+  const prefillState = new URLSearchParams(window.location.search).get("state");
+  if (prefillState) {
+    const stateSelect = form.querySelector("#state");
+    if (stateSelect) {
+      const match = Array.from(stateSelect.options).find(
+        (opt) => opt.value.toUpperCase() === prefillState.toUpperCase()
+      );
+      if (match) {
+        stateSelect.value = match.value;
+        state.state_ = match.value;
+      }
+    }
+  }
+
   function showStep(index) {
     steps.forEach((el, i) => el.classList.toggle("active", i === index));
     progressFill.style.width = `${((index + 1) / total) * 100}%`;

@@ -16,9 +16,11 @@ public/                   the deployed site (Netlify `publish` directory)
   thank-you/                post-submit confirmation page
   contractors/              "join the network" free signup + tier comparison
   dashboard/                contractor login (magic link) + leads + upgrade
+  epoxy-garage-floor-cost/  generated SEO cost-guide pages, one per state + a hub index
   css/style.css             shared theme (black/white + amber accent)
   js/                        quote form logic, pricing calc, dashboard, etc.
   images/                    logo + project gallery photos
+  sitemap.xml, robots.txt   generated alongside the cost-guide pages
 netlify/functions/         serverless backend
   submit-lead.js            validates lead, computes price, matches a contractor, emails both sides
   contractor-signup.js      free-tier contractor application
@@ -26,9 +28,31 @@ netlify/functions/         serverless backend
   stripe-webhook.js         marks a contractor Premium once payment completes
   public-config.js          hands the browser the Supabase URL + anon key
   _lib/                     shared helpers (pricing, matching, email, validation)
+scripts/generate-location-pages.js   builds the /epoxy-garage-floor-cost/ pages (see below)
 supabase/schema.sql         run this once in the Supabase SQL editor
 netlify.toml                build + redirect config
 ```
+
+## Nationwide SEO landing pages
+
+`public/epoxy-garage-floor-cost/` holds one static page per state (plus a hub
+index at `/epoxy-garage-floor-cost/`) so homeowners searching for
+"epoxy garage floor cost in [state]" land directly on a relevant page instead
+of only the homepage. Each page shows directional pricing by garage size and
+finish (reusing `netlify/functions/_lib/pricing.js`, scaled by a rough
+regional multiplier from `netlify/functions/_lib/markets.js`), an FAQ block
+with `FAQPage` schema, and a CTA into the homepage quote form with the state
+pre-selected (`/?state=XX#quote` — handled in `public/js/quote.js`).
+
+These are generated, committed static files — there's no build step in
+Netlify. Re-run the generator and commit the output whenever pricing, copy,
+or the state list changes:
+
+```
+npm run generate:locations
+```
+
+This also regenerates `public/sitemap.xml` and `public/robots.txt`.
 
 ## How matching works
 

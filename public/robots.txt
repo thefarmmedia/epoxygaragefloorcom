@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard/
+Disallow: /thank-you/
+
+Sitemap: https://epoxygaragefloors.ai/sitemap.xml
