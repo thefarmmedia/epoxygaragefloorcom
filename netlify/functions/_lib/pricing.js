@@ -15,10 +15,10 @@ function roundTo(n, step) {
   return Math.round(n / step) * step;
 }
 
-function calcPriceRange({ size, coating, condition }) {
+function calcPriceRange({ size, coating, condition, regionMultiplier }) {
   const sqft = SIZE_SQFT[size] || SIZE_SQFT["2car"];
   const [rateLow, rateHigh] = COATING_RATE[coating] || COATING_RATE.notsure;
-  const mult = CONDITION_MULT[condition] || 1.0;
+  const mult = (CONDITION_MULT[condition] || 1.0) * (regionMultiplier || 1.0);
   return {
     low: roundTo(sqft * rateLow * mult, 50),
     high: roundTo(sqft * rateHigh * mult, 50),
@@ -26,4 +26,4 @@ function calcPriceRange({ size, coating, condition }) {
   };
 }
 
-module.exports = { calcPriceRange };
+module.exports = { calcPriceRange, SIZE_SQFT, COATING_RATE, CONDITION_MULT };

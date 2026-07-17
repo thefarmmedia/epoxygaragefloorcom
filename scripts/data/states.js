@@ -1,0 +1,62 @@
+// Source of truth for the 50 states + DC used to generate the
+// /epoxy-garage-floor-cost/ SEO landing pages. `cities` is a light local-flavor
+// touch (top 3 well-known metros), not a claim of contractor presence there.
+const STATES = [
+  { code: "AL", name: "Alabama", cities: ["Birmingham", "Montgomery", "Huntsville"] },
+  { code: "AK", name: "Alaska", cities: ["Anchorage", "Fairbanks", "Juneau"] },
+  { code: "AZ", name: "Arizona", cities: ["Phoenix", "Tucson", "Mesa"] },
+  { code: "AR", name: "Arkansas", cities: ["Little Rock", "Fayetteville", "Fort Smith"] },
+  { code: "CA", name: "California", cities: ["Los Angeles", "San Diego", "Sacramento"] },
+  { code: "CO", name: "Colorado", cities: ["Denver", "Colorado Springs", "Aurora"] },
+  { code: "CT", name: "Connecticut", cities: ["Hartford", "Bridgeport", "New Haven"] },
+  { code: "DE", name: "Delaware", cities: ["Wilmington", "Dover", "Newark"] },
+  { code: "DC", name: "District of Columbia", cities: ["Washington"] },
+  { code: "FL", name: "Florida", cities: ["Miami", "Orlando", "Tampa"] },
+  { code: "GA", name: "Georgia", cities: ["Atlanta", "Augusta", "Savannah"] },
+  { code: "HI", name: "Hawaii", cities: ["Honolulu", "Hilo", "Kailua"] },
+  { code: "ID", name: "Idaho", cities: ["Boise", "Meridian", "Nampa"] },
+  { code: "IL", name: "Illinois", cities: ["Chicago", "Aurora", "Naperville"] },
+  { code: "IN", name: "Indiana", cities: ["Indianapolis", "Fort Wayne", "Evansville"] },
+  { code: "IA", name: "Iowa", cities: ["Des Moines", "Cedar Rapids", "Davenport"] },
+  { code: "KS", name: "Kansas", cities: ["Wichita", "Overland Park", "Kansas City"] },
+  { code: "KY", name: "Kentucky", cities: ["Louisville", "Lexington", "Bowling Green"] },
+  { code: "LA", name: "Louisiana", cities: ["New Orleans", "Baton Rouge", "Shreveport"] },
+  { code: "ME", name: "Maine", cities: ["Portland", "Lewiston", "Bangor"] },
+  { code: "MD", name: "Maryland", cities: ["Baltimore", "Annapolis", "Frederick"] },
+  { code: "MA", name: "Massachusetts", cities: ["Boston", "Worcester", "Springfield"] },
+  { code: "MI", name: "Michigan", cities: ["Detroit", "Grand Rapids", "Ann Arbor"] },
+  { code: "MN", name: "Minnesota", cities: ["Minneapolis", "Saint Paul", "Rochester"] },
+  { code: "MS", name: "Mississippi", cities: ["Jackson", "Gulfport", "Hattiesburg"] },
+  { code: "MO", name: "Missouri", cities: ["Springfield", "Kansas City", "St. Louis"] },
+  { code: "MT", name: "Montana", cities: ["Billings", "Missoula", "Bozeman"] },
+  { code: "NE", name: "Nebraska", cities: ["Omaha", "Lincoln", "Bellevue"] },
+  { code: "NV", name: "Nevada", cities: ["Las Vegas", "Reno", "Henderson"] },
+  { code: "NH", name: "New Hampshire", cities: ["Manchester", "Nashua", "Concord"] },
+  { code: "NJ", name: "New Jersey", cities: ["Newark", "Jersey City", "Trenton"] },
+  { code: "NM", name: "New Mexico", cities: ["Albuquerque", "Santa Fe", "Las Cruces"] },
+  { code: "NY", name: "New York", cities: ["New York City", "Buffalo", "Rochester"] },
+  { code: "NC", name: "North Carolina", cities: ["Charlotte", "Raleigh", "Greensboro"] },
+  { code: "ND", name: "North Dakota", cities: ["Fargo", "Bismarck", "Grand Forks"] },
+  { code: "OH", name: "Ohio", cities: ["Columbus", "Cleveland", "Cincinnati"] },
+  { code: "OK", name: "Oklahoma", cities: ["Oklahoma City", "Tulsa", "Norman"] },
+  { code: "OR", name: "Oregon", cities: ["Portland", "Eugene", "Salem"] },
+  { code: "PA", name: "Pennsylvania", cities: ["Philadelphia", "Pittsburgh", "Allentown"] },
+  { code: "RI", name: "Rhode Island", cities: ["Providence", "Warwick", "Cranston"] },
+  { code: "SC", name: "South Carolina", cities: ["Charleston", "Columbia", "Greenville"] },
+  { code: "SD", name: "South Dakota", cities: ["Sioux Falls", "Rapid City", "Aberdeen"] },
+  { code: "TN", name: "Tennessee", cities: ["Nashville", "Memphis", "Knoxville"] },
+  { code: "TX", name: "Texas", cities: ["Houston", "San Antonio", "Dallas"] },
+  { code: "UT", name: "Utah", cities: ["Salt Lake City", "Provo", "West Valley City"] },
+  { code: "VT", name: "Vermont", cities: ["Burlington", "South Burlington", "Rutland"] },
+  { code: "VA", name: "Virginia", cities: ["Virginia Beach", "Richmond", "Norfolk"] },
+  { code: "WA", name: "Washington", cities: ["Seattle", "Spokane", "Tacoma"] },
+  { code: "WV", name: "West Virginia", cities: ["Charleston", "Huntington", "Morgantown"] },
+  { code: "WI", name: "Wisconsin", cities: ["Milwaukee", "Madison", "Green Bay"] },
+  { code: "WY", name: "Wyoming", cities: ["Cheyenne", "Casper", "Laramie"] },
+];
+
+function slugify(name) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+module.exports = { STATES, slugify };

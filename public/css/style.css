@@ -427,6 +427,46 @@ p { margin: 0 0 16px; color: var(--off-white); }
   font-size: 12.5px; color: var(--muted);
 }
 
+/* Breadcrumbs (location/cost-guide pages) */
+.breadcrumbs { display: flex; flex-wrap: wrap; gap: 6px; font-size: 12.5px; color: var(--muted); margin-bottom: 20px; }
+.breadcrumbs a { color: var(--muted); }
+.breadcrumbs a:hover { color: var(--amber); }
+.breadcrumbs .sep { color: var(--border); }
+.section-alt .breadcrumbs, .section-alt .breadcrumbs a { color: var(--ink-muted); }
+.section-alt .breadcrumbs .sep { color: var(--light-border); }
+
+/* Stat grid (price-by-size cards on state cost-guide pages) */
+.stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 36px; }
+@media (max-width: 980px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .stat-grid { grid-template-columns: 1fr; } }
+.stat-card { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 18px; text-align: center; }
+.stat-card .size { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--muted); margin-bottom: 10px; }
+.stat-card .range { font-family: var(--font-display); font-size: 22px; color: var(--amber); }
+.section-alt .stat-card { background: var(--white); border-color: var(--light-border); }
+
+/* Cost-by-finish table */
+.finish-table { width: 100%; border-collapse: collapse; margin-top: 28px; }
+.finish-table th, .finish-table td { text-align: left; padding: 14px 16px; border-bottom: 1px solid var(--border); font-size: 14px; }
+.finish-table th { color: var(--muted); text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; font-weight: 700; }
+.section-alt .finish-table th, .section-alt .finish-table td { border-color: var(--light-border); }
+
+/* FAQ accordion */
+.faq-list { max-width: 760px; margin: 36px auto 0; text-align: left; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 18px 0; }
+.faq-item summary { cursor: pointer; font-weight: 700; font-size: 15px; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after { content: "+"; color: var(--amber); font-size: 20px; flex-shrink: 0; }
+.faq-item[open] summary::after { content: "\2013"; }
+.faq-item p { margin: 12px 0 0; }
+.section-alt .faq-item { border-color: var(--light-border); }
+
+/* State directory (cost-guide hub page) */
+.state-directory { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px 24px; }
+@media (max-width: 980px) { .state-directory { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .state-directory { grid-template-columns: repeat(2, 1fr); } }
+.state-directory a { font-size: 14.5px; font-weight: 600; padding: 8px 0; border-bottom: 1px solid var(--light-border); }
+.state-directory a:hover { color: var(--amber-dark); }
+
 /* Utility */
 .hidden { display: none !important; }
 .badge-inline {
