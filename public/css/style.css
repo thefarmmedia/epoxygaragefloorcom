@@ -178,10 +178,20 @@ p { margin: 0 0 16px; color: var(--off-white); }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 96px;
 }
 .brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 20px; }
-.brand img { height: 40px; width: auto; }
+/* Logo source file is a square lockup with a small tagline baked into the
+   bottom ~24% — crop that off so the header/footer mark reads as a clean
+   wordmark instead of illegible fine print at this size. */
+.brand img {
+  height: 64px;
+  width: auto;
+  aspect-ratio: 128 / 97;
+  object-fit: cover;
+  object-position: top;
+}
+.site-footer .brand img { height: 56px; }
 .nav-links { display: flex; align-items: center; gap: 28px; font-weight: 600; font-size: 14px; }
 .nav-links a { color: var(--off-white); }
 .nav-links a:hover { color: var(--amber); }
@@ -192,7 +202,7 @@ p { margin: 0 0 16px; color: var(--off-white); }
   .nav-links {
     display: none;
     position: absolute;
-    top: 76px; left: 0; right: 0;
+    top: 96px; left: 0; right: 0;
     background: var(--black);
     border-bottom: 1px solid var(--border);
     flex-direction: column;
@@ -205,13 +215,20 @@ p { margin: 0 0 16px; color: var(--off-white); }
   .header-cta .btn-outline { display: none; }
 }
 
+@media (max-width: 480px) {
+  .site-header .wrap { height: 80px; }
+  .brand img { height: 52px; }
+  .nav-links { top: 80px; }
+}
+
 /* Hero */
 .hero {
   position: relative;
   padding: 64px 0 56px;
   background:
-    radial-gradient(ellipse at top right, rgba(245, 180, 0, 0.12), transparent 55%),
-    var(--black);
+    radial-gradient(ellipse at top right, rgba(245, 180, 0, 0.16), transparent 55%),
+    linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.88) 45%, var(--black) 100%),
+    url('/images/gallery/epoxy-garage-floor-springfield-mo.jpg') center 60% / cover no-repeat;
   border-bottom: 1px solid var(--border);
 }
 .hero-grid {
